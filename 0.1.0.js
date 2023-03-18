@@ -1,11 +1,11 @@
-function compra(valor, convenio, cartao){
-    if (convenio == true && cartao == true){
-        return valor-(valor*15/100);
-}else if(convenio == true || cartao == true  ){
-         return valor-(valor*10/100);
-}else{
-    return valor;
+function compra(valor, convenio, cartao) {
+    if (convenio && cartao) {
+        return valor - (valor * 0.15);
+    } else if (convenio || cartao) {
+        return valor - (valor * 0.10);
+    } else {
+        return valor;
+    }
 }
-}
-let pagamento = compra(100, false, false);
+let pagamento = compra(100, true, true);
 console.log(pagamento)
